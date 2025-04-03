@@ -1,0 +1,38 @@
+# Ignore sensitive files
+.env
+*.key
+*.pem
+*.crt
+*.enc
+*.p12
+*.pfx
+
+# Ignore configuration files
+config.yml
+config.json
+database.yml
+secrets.yml
+
+# Ignore log files
+*.log
+
+# Ignore node_modules
+node_modules/
+
+# Ignore Python virtual environment
+venv/
+__pycache__/
+
+# Ignore compiled files
+*.out
+*.o
+*.class
+
+# Ignore IDE specific files
+.vscode/
+.idea/
+*.swp
+
+# Ignore OS specific files
+.DS_Store
+Thumbs.db
