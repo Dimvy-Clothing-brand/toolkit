@@ -52,7 +52,7 @@ jobs:
         script: |
           const {default: artifact} = require('./packages/artifact/lib/artifact')
 
-          const artifactName = 'my-artifact-${{ matrix.runs-on }}'
+          const artifactName = `my-artifact-${process.env.RUNS_ON}`
           console.log('artifactName: ' + artifactName)
 
           const fileContents = ['artifact-path/first.txt','artifact-path/second.txt']
