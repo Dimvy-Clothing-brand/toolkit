@@ -1,236 +1,99 @@
+# Toolkit
 
-<p align="center">
-  <img src="res/at-logo.png">
-</p>
+Welcome to the **Toolkit** repository for Dimvy Clothing Brand!
 
-<p align="center">
-  <a href="https://github.com/actions/toolkit/actions?query=workflow%3Atoolkit-unit-tests"><img alt="Toolkit unit tests status" src="https://github.com/actions/toolkit/workflows/toolkit-unit-tests/badge.svg"></a>
-  <a href="https://github.com/actions/toolkit/actions?query=workflow%3Atoolkit-audit"><img alt="Toolkit audit status" src="https://github.com/actions/toolkit/workflows/toolkit-audit/badge.svg"></a>
-</p>
+This project provides a set of utilities and scripts designed to support and automate various operations for Dimvy Clothing Brand. The toolkit is intended for use by developers and contributors working within the Dimvy ecosystem.
 
+---
 
-## GitHub Actions Toolkit
+## 🚀 Features
 
-The GitHub Actions ToolKit provides a set of packages to make creating actions easier.
+- Collection of tools and scripts for automation
+- Utilities for managing workflows and daily operations
+- Easy integration into existing projects
+- Expandable and customizable for future needs
 
-<br/>
-<h3 align="center">Get started with the <a href="https://github.com/actions/javascript-action">javascript-action template</a>!</h3>
-<br/>
+---
 
-## Packages
+## 📦 Getting Started
 
-:heavy_check_mark: [@actions/core](packages/core)
+### Prerequisites
 
-Provides functions for inputs, outputs, results, logging, secrets and variables. Read more [here](packages/core)
+- [Node.js](https://nodejs.org/) (if using JavaScript/TypeScript tools)
+- [Python](https://python.org/) (if using Python scripts)
+- Other dependencies as specified in individual tool subfolders
 
-```bash
-npm install @actions/core
-```
-<br/>
+### Installation
 
-:runner: [@actions/exec](packages/exec)
+1. **Clone the repository:**
 
-Provides functions to exec cli tools and process output. Read more [here](packages/exec)
+   ```bash
+   git clone https://github.com/Dimvy-Clothing-brand/toolkit.git
+   cd toolkit
+   ```
 
-```bash
-npm install @actions/exec
-```
-<br/>
+2. **Install dependencies** (if applicable):
 
-:ice_cream: [@actions/glob](packages/glob)
+   - For Node.js projects:
+     ```bash
+     npm install
+     ```
+   - For Python projects:
+     ```bash
+     pip install -r requirements.txt
+     ```
 
-Provides functions to search for files matching glob patterns. Read more [here](packages/glob)
+3. **Configure environment variables** (if required by a tool):
 
-```bash
-npm install @actions/glob
-```
-<br/>
+   - Copy `.env.example` to `.env` and update values as needed.
 
-:phone: [@actions/http-client](packages/http-client)
+---
 
-A lightweight HTTP client optimized for building actions. Read more [here](packages/http-client)
+## 🛠️ Usage
 
-```bash
-npm install @actions/http-client
-```
-<br/>
+Explore the `scripts/` or `tools/` directory for available utilities.
 
-:pencil2: [@actions/io](packages/io)
+- Each tool has a README or usage instructions in its respective folder.
+- To run a script:
+  ```bash
+  # Example for a Node.js tool
+  node tools/example-tool.js
 
-Provides disk i/o functions like cp, mv, rmRF, which etc. Read more [here](packages/io)
+  # Example for a Python script
+  python scripts/example_script.py
+  ```
 
-```bash
-npm install @actions/io
-```
-<br/>
+---
 
-:hammer: [@actions/tool-cache](packages/tool-cache)
+## 🤝 Contributing
 
-Provides functions for downloading and caching tools.  e.g. setup-* actions. Read more [here](packages/tool-cache)
+1. Fork the repo and create your branch: `git checkout -b feature/your-feature`
+2. Commit your changes: `git commit -am 'Add new feature'`
+3. Push to the branch: `git push origin feature/your-feature`
+4. Open a Pull Request
 
-See @actions/cache for caching workflow dependencies.
+**Please ensure your code follows the repository's style guidelines and passes any tests.**
 
-```bash
-npm install @actions/tool-cache
-```
-<br/>
+---
 
-:octocat: [@actions/github](packages/github)
+## 🛡️ Security
 
-Provides an Octokit client hydrated with the context that the current action is being run in. Read more [here](packages/github)
+- Do **not** commit sensitive information (API keys, passwords) to the repository.
+- Always review code for vulnerabilities before merging.
+- If you find a security issue, please report it privately to the maintainers.
 
-```bash
-npm install @actions/github
-```
-<br/>
+---
 
-:floppy_disk: [@actions/artifact](packages/artifact)
+## 📄 License
 
-Provides functions to interact with actions artifacts. Read more [here](packages/artifact)
+This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.
 
-```bash
-npm install @actions/artifact
-```
-<br/>
+---
 
-:dart: [@actions/cache](packages/cache)
+## 📫 Contact
 
-Provides functions to cache dependencies and build outputs to improve workflow execution time. Read more [here](packages/cache)
+For questions, support, or project proposals, please contact the repository maintainers via [GitHub Issues](https://github.com/Dimvy-Clothing-brand/toolkit/issues).
 
-```bash
-npm install @actions/cache
-```
-<br/>
+---
 
-:lock_with_ink_pen: [@actions/attest](packages/attest)
-
-Provides functions to write attestations for workflow artifacts. Read more [here](packages/attest)
-
-```bash
-npm install @actions/attest
-```
-<br/>
-
-## Creating an Action with the Toolkit
-
-:question: [Choosing an action type](docs/action-types.md)
-
-Outlines the differences and why you would want to create a JavaScript or a container based action.
-<br/>
-<br/>
-
-:curly_loop: [Versioning](docs/action-versioning.md)
-
-Actions are downloaded and run from the GitHub graph of repos.  This contains guidance for versioning actions and safe releases.
-<br/>
-<br/>
-
-:warning: [Problem Matchers](docs/problem-matchers.md)
-
-Problem Matchers are a way to scan the output of actions for a specified regex pattern and surface that information prominently in the UI.
-<br/>
-<br/>
-
-:warning: [Proxy Server Support](docs/proxy-support.md)
-
-Self-hosted runners can be configured to run behind proxy servers.
-<br/>
-<br/>
-
-<h3><a href="https://github.com/actions/hello-world-javascript-action">Hello World JavaScript Action</a></h3>
-
-Illustrates how to create a simple hello world javascript action.
-
-```javascript
-...
-  const nameToGreet = core.getInput('who-to-greet');
-  console.log(`Hello ${nameToGreet}!`);
-...
-```
-<br/>
-
-<h3><a href="https://github.com/actions/javascript-action">JavaScript Action Walkthrough</a></h3>
-
-Walkthrough and template for creating a JavaScript Action with tests, linting, workflow, publishing, and versioning.
-
-```javascript
-async function run() {
-  try {
-    const ms = core.getInput('milliseconds');
-    console.log(`Waiting ${ms} milliseconds ...`)
-    ...
-```
-```javascript
-PASS ./index.test.js
-  ✓ throws invalid number
-  ✓ wait 500 ms
-  ✓ test runs
-
-Test Suites: 1 passed, 1 total
-Tests:       3 passed, 3 total
-```
-<br/>
-
-<h3><a href="https://github.com/actions/typescript-action">TypeScript Action Walkthrough</a></h3>
-
-Walkthrough creating a TypeScript Action with compilation, tests, linting, workflow, publishing, and versioning.
-
-```javascript
-import * as core from '@actions/core';
-
-async function run() {
-  try {
-    const ms = core.getInput('milliseconds');
-    console.log(`Waiting ${ms} milliseconds ...`)
-    ...
-```
-```javascript
-PASS ./index.test.js
-  ✓ throws invalid number
-  ✓ wait 500 ms
-  ✓ test runs
-
-Test Suites: 1 passed, 1 total
-Tests:       3 passed, 3 total
-```
-<br/>
-<br/>
-
-<h3><a href="docs/container-action.md">Docker Action Walkthrough</a></h3>
-
-Create an action that is delivered as a container and run with docker.
-
-```docker
-FROM alpine:3.10
-COPY LICENSE README.md /
-COPY entrypoint.sh /entrypoint.sh
-ENTRYPOINT ["/entrypoint.sh"]
-```
-<br/>
-
-<h3><a href="https://github.com/actions/container-toolkit-action">Docker Action Walkthrough with Octokit</a></h3>
-
-Create an action that is delivered as a container which uses the toolkit.  This example uses the GitHub context to construct an Octokit client.
-
-```docker
-FROM node:slim
-COPY . .
-RUN npm install --production
-ENTRYPOINT ["node", "/lib/main.js"]
-```
-```javascript
-const myInput = core.getInput('myInput');
-core.debug(`Hello ${myInput} from inside a container`);
-
-const context = github.context;
-console.log(`We can even get context data, like the repo: ${context.repo.repo}`)
-```
-<br/>
-
-## Contributing
-
-We welcome contributions.  See [how to contribute](.github/CONTRIBUTING.md).
-
-## Code of Conduct
-
-See [our code of conduct](CODE_OF_CONDUCT.md).
+Happy coding! 🚀
