@@ -1,236 +1,119 @@
+# Toolkit
 
-<p align="center">
-  <img src="res/at-logo.png">
-</p>
+Welcome to the **Toolkit** repository for Dimvy Clothing Brand!
 
-<p align="center">
-  <a href="https://github.com/actions/toolkit/actions?query=workflow%3Atoolkit-unit-tests"><img alt="Toolkit unit tests status" src="https://github.com/actions/toolkit/workflows/toolkit-unit-tests/badge.svg"></a>
-  <a href="https://github.com/actions/toolkit/actions?query=workflow%3Atoolkit-audit"><img alt="Toolkit audit status" src="https://github.com/actions/toolkit/workflows/toolkit-audit/badge.svg"></a>
-</p>
+This toolkit provides essential scripts and resources to help manage and automate various aspects of the Dimvy Clothing Brand's operations, including automation, configuration, and management tasks.
 
+---
 
-## GitHub Actions Toolkit
+## Table of Contents
 
-The GitHub Actions ToolKit provides a set of packages to make creating actions easier.
+- [Overview](#overview)
+- [Features](#features)
+- [Getting Started](#getting-started)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Configuration](#configuration)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
 
-<br/>
-<h3 align="center">Get started with the <a href="https://github.com/actions/javascript-action">javascript-action template</a>!</h3>
-<br/>
+---
 
-## Packages
+## Overview
 
-:heavy_check_mark: [@actions/core](packages/core)
+The **Toolkit** project is designed to streamline common workflows for the Dimvy Clothing Brand team. It includes scripts and tools for fixing code errors, configuring environments, executing tasks, enhancing security, managing code, and detecting/fixing duplicate code.
 
-Provides functions for inputs, outputs, results, logging, secrets and variables. Read more [here](packages/core)
+---
 
-```bash
-npm install @actions/core
+## Features
+
+- **Error Detection & Fixing:** Find and resolve common code errors efficiently.
+- **Configuration Tools:** Easily set up and manage environments.
+- **Execution Scripts:** Automate repetitive tasks.
+- **Security Enhancements:** Identify and help hide vulnerable code sections.
+- **Code Management:** Tools for managing and organizing codebase.
+- **Duplicate Code Finder:** Detect and resolve duplicate code issues.
+
+---
+
+## Getting Started
+
+### Prerequisites
+
+- [Node.js](https://nodejs.org/) (if applicable)
+- [Python](https://python.org/) (if applicable)
+- Git
+
+_Ensure you have the required dependencies installed for the scripts you plan to use._
+
+---
+
+## Installation
+
+Clone the repository:
+
+```sh
+git clone https://github.com/Dimvy-Clothing-brand/toolkit.git
+cd toolkit
 ```
-<br/>
 
-:runner: [@actions/exec](packages/exec)
+Install dependencies (if any):
 
-Provides functions to exec cli tools and process output. Read more [here](packages/exec)
+```sh
+# Example for Node.js
+npm install
 
-```bash
-npm install @actions/exec
+# Example for Python
+pip install -r requirements.txt
 ```
-<br/>
 
-:ice_cream: [@actions/glob](packages/glob)
+---
 
-Provides functions to search for files matching glob patterns. Read more [here](packages/glob)
+## Usage
 
-```bash
-npm install @actions/glob
+Depending on the script or tool you want to use, refer to the relevant file in the repository. Typical usage patterns:
+
+```sh
+# Run a Node.js script
+node script.js
+
+# Run a Python script
+python script.py
 ```
-<br/>
 
-:phone: [@actions/http-client](packages/http-client)
+> **Note:** Refer to comments in each script for specific instructions.
 
-A lightweight HTTP client optimized for building actions. Read more [here](packages/http-client)
+---
 
-```bash
-npm install @actions/http-client
-```
-<br/>
+## Configuration
 
-:pencil2: [@actions/io](packages/io)
+Some scripts may require configuration files (e.g., `.env`, `config.json`). Please check the script headers or accompanying documentation for setup instructions.
 
-Provides disk i/o functions like cp, mv, rmRF, which etc. Read more [here](packages/io)
-
-```bash
-npm install @actions/io
-```
-<br/>
-
-:hammer: [@actions/tool-cache](packages/tool-cache)
-
-Provides functions for downloading and caching tools.  e.g. setup-* actions. Read more [here](packages/tool-cache)
-
-See @actions/cache for caching workflow dependencies.
-
-```bash
-npm install @actions/tool-cache
-```
-<br/>
-
-:octocat: [@actions/github](packages/github)
-
-Provides an Octokit client hydrated with the context that the current action is being run in. Read more [here](packages/github)
-
-```bash
-npm install @actions/github
-```
-<br/>
-
-:floppy_disk: [@actions/artifact](packages/artifact)
-
-Provides functions to interact with actions artifacts. Read more [here](packages/artifact)
-
-```bash
-npm install @actions/artifact
-```
-<br/>
-
-:dart: [@actions/cache](packages/cache)
-
-Provides functions to cache dependencies and build outputs to improve workflow execution time. Read more [here](packages/cache)
-
-```bash
-npm install @actions/cache
-```
-<br/>
-
-:lock_with_ink_pen: [@actions/attest](packages/attest)
-
-Provides functions to write attestations for workflow artifacts. Read more [here](packages/attest)
-
-```bash
-npm install @actions/attest
-```
-<br/>
-
-## Creating an Action with the Toolkit
-
-:question: [Choosing an action type](docs/action-types.md)
-
-Outlines the differences and why you would want to create a JavaScript or a container based action.
-<br/>
-<br/>
-
-:curly_loop: [Versioning](docs/action-versioning.md)
-
-Actions are downloaded and run from the GitHub graph of repos.  This contains guidance for versioning actions and safe releases.
-<br/>
-<br/>
-
-:warning: [Problem Matchers](docs/problem-matchers.md)
-
-Problem Matchers are a way to scan the output of actions for a specified regex pattern and surface that information prominently in the UI.
-<br/>
-<br/>
-
-:warning: [Proxy Server Support](docs/proxy-support.md)
-
-Self-hosted runners can be configured to run behind proxy servers.
-<br/>
-<br/>
-
-<h3><a href="https://github.com/actions/hello-world-javascript-action">Hello World JavaScript Action</a></h3>
-
-Illustrates how to create a simple hello world javascript action.
-
-```javascript
-...
-  const nameToGreet = core.getInput('who-to-greet');
-  console.log(`Hello ${nameToGreet}!`);
-...
-```
-<br/>
-
-<h3><a href="https://github.com/actions/javascript-action">JavaScript Action Walkthrough</a></h3>
-
-Walkthrough and template for creating a JavaScript Action with tests, linting, workflow, publishing, and versioning.
-
-```javascript
-async function run() {
-  try {
-    const ms = core.getInput('milliseconds');
-    console.log(`Waiting ${ms} milliseconds ...`)
-    ...
-```
-```javascript
-PASS ./index.test.js
-  ✓ throws invalid number
-  ✓ wait 500 ms
-  ✓ test runs
-
-Test Suites: 1 passed, 1 total
-Tests:       3 passed, 3 total
-```
-<br/>
-
-<h3><a href="https://github.com/actions/typescript-action">TypeScript Action Walkthrough</a></h3>
-
-Walkthrough creating a TypeScript Action with compilation, tests, linting, workflow, publishing, and versioning.
-
-```javascript
-import * as core from '@actions/core';
-
-async function run() {
-  try {
-    const ms = core.getInput('milliseconds');
-    console.log(`Waiting ${ms} milliseconds ...`)
-    ...
-```
-```javascript
-PASS ./index.test.js
-  ✓ throws invalid number
-  ✓ wait 500 ms
-  ✓ test runs
-
-Test Suites: 1 passed, 1 total
-Tests:       3 passed, 3 total
-```
-<br/>
-<br/>
-
-<h3><a href="docs/container-action.md">Docker Action Walkthrough</a></h3>
-
-Create an action that is delivered as a container and run with docker.
-
-```docker
-FROM alpine:3.10
-COPY LICENSE README.md /
-COPY entrypoint.sh /entrypoint.sh
-ENTRYPOINT ["/entrypoint.sh"]
-```
-<br/>
-
-<h3><a href="https://github.com/actions/container-toolkit-action">Docker Action Walkthrough with Octokit</a></h3>
-
-Create an action that is delivered as a container which uses the toolkit.  This example uses the GitHub context to construct an Octokit client.
-
-```docker
-FROM node:slim
-COPY . .
-RUN npm install --production
-ENTRYPOINT ["node", "/lib/main.js"]
-```
-```javascript
-const myInput = core.getInput('myInput');
-core.debug(`Hello ${myInput} from inside a container`);
-
-const context = github.context;
-console.log(`We can even get context data, like the repo: ${context.repo.repo}`)
-```
-<br/>
+---
 
 ## Contributing
 
-We welcome contributions.  See [how to contribute](.github/CONTRIBUTING.md).
+Contributions are welcome! Please open issues or pull requests for bug fixes, feature requests, or improvements.
 
-## Code of Conduct
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/FeatureName`)
+3. Commit your changes (`git commit -m 'Add FeatureName'`)
+4. Push to the branch (`git push origin feature/FeatureName`)
+5. Open a pull request
 
-See [our code of conduct](CODE_OF_CONDUCT.md).
+---
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+---
+
+## Contact
+
+For questions, suggestions, or support, open an [issue](https://github.com/Dimvy-Clothing-brand/toolkit/issues) or contact the Dimvy Clothing Brand team.
+
+---
+
+**Dimvy Clothing Brand – Delivering Solutions with Style!**
